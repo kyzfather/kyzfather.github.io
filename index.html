@@ -7,6 +7,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
+    <style>
+        .ppic {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .iico {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
     <nav class="max-w-3xl mx-auto px-4 py-4 flex justify-end">
         <a href="blog.html" class="text-gray-600 hover:text-gray-900 font-medium">Blog</a>
     </nav>
@@ -14,12 +24,14 @@
         <!-- Personal Info -->
         <section class="flex flex-col items-center md:flex-row md:items-start md:gap-8">
             <!-- Photo -->
-            <img src="my_photo.jpg" alt="My Photo" class="w-48 h-48 rounded-full object-cover border-2 border-gray-300">
+            <div id="dpic">
+                <img src="my_photo.jpg" alt="My Photo" class="ppic w-48 h-48 rounded-full object-cover border-2 border-gray-300">
+            </div>
             <!-- Name and icons -->
-            <div class="mt-4 md:mt-0 text-center md:text-left">
+            <div id="ddesc" class="mt-4 md:mt-0 text-center md:text-left">
                 <h1 class="text-3xl font-bold">赵翊琨 (Yikun Zhao)</h1>
-                <!-- GitHub and Email icons -->
-                <div class="flex gap-4 mt-4 justify-center md:justify-start">
+                <h2 class="text-xl text-gray-600 mt-2">I like to train deep neural nets on large datasets 🧠🤖💥</h2>
+                <div id="dico" class="flex gap-4 mt-4 justify-center md:justify-start">
                     <a href="https://github.com/kyzfather" class="text-gray-600 hover:text-gray-900" aria-label="GitHub">
                         <!-- GitHub SVG -->
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
