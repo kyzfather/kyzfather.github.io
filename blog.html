@@ -1,38 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的个人博客 | 极简技术随笔</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="大模型 Infra 与高性能计算的探索记录">
+
+    <style>
+        /* 完美复刻原版主页的核心全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* 页面居中包裹器 */
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉布局 */
+        .site-header {
+            border-bottom: 1px solid #e8e8e8;
+            padding: 30px 0;
+            margin-bottom: 40px;
+        }
+        .site-header .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .site-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .site-nav a {
+            color: #555555;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .site-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 主体内容区块 */
+        .page-content {
+            padding-bottom: 40px;
+        }
+
+        /* 核心：极其素雅的文章列表样式 */
+        .posts {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .posts li {
+            margin-bottom: 35px;
+            border-bottom: 1px dashed #f0f0f0;
+            padding-bottom: 20px;
+        }
+        .posts li:last-child {
+            border-bottom: none;
+        }
+        .post-date {
+            display: block;
+            font-size: 14px;
+            color: #999999;
+            margin-bottom: 4px;
+        }
+        .post-link {
+            font-size: 20px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .post-link:hover {
+            text-decoration: underline;
+        }
+        .post-summary {
+            margin-top: 8px;
+            font-size: 15px;
+            color: #555555;
+            text-align: justify;
+        }
+
+        /* 页脚三栏布局 */
+        .site-footer {
+            border-top: 1px solid #e8e8e8;
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #777777;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .footer-grid ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-grid a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .footer-grid a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 移动端响应式适配 */
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .site-header {
+                padding: 20px 0;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-    <nav class="max-w-3xl mx-auto px-4 py-4 flex justify-between">
-        <a href="index.html" class="text-gray-600 hover:text-gray-900 font-medium">Home</a>
-        <span class="text-gray-600 font-medium">Blog</span>
-    </nav>
-    <main class="max-w-3xl mx-auto px-4 py-12">
-        <h1 class="text-3xl font-bold mb-8">Blog</h1>
-        <ul class="space-y-6">
-            <li>
-                <a href="post1.html" class="block p-6 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h2 class="text-xl font-semibold mb-2">Post 1: Getting Started with CUDA</h2>
-                    <p class="text-gray-600">A brief introduction to CUDA programming and GPU acceleration.</p>
-                </a>
-            </li>
-            <li>
-                <a href="post2.html" class="block p-6 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h2 class="text-xl font-semibold mb-2">Post 2: Tensor Core Programming</h2>
-                    <p class="text-gray-600">How to leverage Tensor Cores for matrix multiplication.</p>
-                </a>
-            </li>
-            <li>
-                <a href="post3.html" class="block p-6 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h2 class="text-xl font-semibold mb-2">Post 3: Multi-Agent Systems</h2>
-                    <p class="text-gray-600">Architectural patterns for building multi-agent LLM systems.</p>
-                </a>
-            </li>
-        </ul>
-    </main>
+<body>
+
+    <!-- 页眉区域 -->
+    <header class="site-header">
+        <div class="wrap">
+            <a class="site-title" href="index.html">← 返回主页</a>
+            <nav class="site-nav">
+                <a class="page-link" href="#about">关于博客</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 博客列表区域 -->
+    <div class="page-content">
+        <div class="wrap">
+            <ul class="posts">
+                
+                <!-- 文章节点 1 -->
+                <li>
+                    <span class="post-date">2026年8月10日</span>
+                    <a class="post-link" href="#">大模型算子开发中的 Tensor Core 寄存器碎片优化实践</a>
+                    <div class="post-summary">
+                        探讨在高性能计算（HPC）场景下，如何通过深入调整 Warp 协作和共享内存分配，解决高性能矩阵乘法中令人头疼的寄存器布局碎片化问题，榨干 GPU 的最后一丝算力。
+                    </div>
+                </li>
+
+                <!-- 文章节点 2 -->
+                <li>
+                    <span class="post-date">2026年6月15日</span>
+                    <a class="post-link" href="#">从零构建：基于垂直领域的多 Agent 协同架构与 Token 优化策略</a>
+                    <div class="post-summary">
+                        记录一次将复杂业务链条拆解为多智能体系统的交付过程。重点分享如何设计 Tool 调用的状态机，以及在大吞吐量流式输出下，如何优化上下文以降低 Token 消耗成本。
+                    </div>
+                </li>
+
+                <!-- 文章节点 3 -->
+                <li>
+                    <span class="post-date">2026年4月02日</span>
+                    <a class="post-link" href="#">Linux 底层黑魔法：利用 Aider 和 命令行快速构建自动化全栈工坊</a>
+                    <div class="post-summary">
+                        分享我在 Ubuntu 开发环境中，通过配置高效的环境变量与大模型开发 Agent（Aider）深度融合，用极短时间交付高可用性个人基础架构的工程心得。
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- 页脚区域 -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <ul>
+                        <li style="font-weight: bold; margin-bottom: 5px;">我的技术随笔</li>
+                        <li>关注大模型 Infra 与底层系统优化</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="https://github.com" target="_blank">GitHub 仓库</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Powered by Minimalist Tech Template. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
