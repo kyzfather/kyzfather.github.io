@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>[Your Name]</title>
+    <style>
+      /* Minimal CSS based on the style used in ref.html */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: #fff;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      #dhead {
+        padding-top: 40px;
+        padding-bottom: 20px;
+      }
+      #dpic {
+        margin-right: 30px;
+      }
+      .ppic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ddd;
+      }
+      #ddesc h1 {
+        font-size: 2.2rem;
+        margin: 0 0 5px 0;
+      }
+      #ddesc h2 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #666;
+        margin: 0 0 15px 0;
+      }
+      #dico {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .iico {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      #demail {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+      }
+      .ctitle {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 30px 0 15px 0;
+      }
+      .entry {
+        display: flex;
+        margin-bottom: 30px;
+      }
+      .timespan {
+        width: 120px;
+        font-weight: bold;
+        color: #555;
+        padding-right: 15px;
+        text-align: right;
+      }
+      .ico {
+        width: 40px;
+        text-align: center;
+        position: relative;
+      }
+      .entry-dot {
+        width: 10px;
+        height: 10px;
+        background: #999;
+        border-radius: 50%;
+        margin: 5px auto;
+      }
+      .ico img {
+        max-width: 32px;
+        max-height: 32px;
+      }
+      .desc {
+        flex: 1;
+        padding-left: 15px;
+      }
+      .desc a {
+        color: #0645ad;
+        text-decoration: none;
+      }
+      .desc a:hover {
+        text-decoration: underline;
+      }
+      .card {
+        width: 200px;
+        margin: 10px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .ccimg img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+      }
+      .cdesc {
+        padding: 8px;
+        font-size: 0.9rem;
+      }
+      .project {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .pico {
+        width: 80px;
+        margin-right: 15px;
+      }
+      .pico img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .pdesc {
+        flex: 1;
+      }
+      .pend {
+        clear: both;
+      }
+      .pub {
+        margin-bottom: 15px;
+      }
+      .pub-title {
+        font-weight: bold;
+      }
+      .pub-venue {
+        font-style: italic;
+        color: #666;
+      }
+      .pub-authors {
+        color: #555;
+      }
+      .tul {
+        list-style: none;
+        padding: 0;
+      }
+      .til {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .tilb {
+        font-weight: bold;
+      }
+      .nodot {
+        list-style: none;
+        padding-left: 0;
+      }
+      .nodot li {
+        margin-bottom: 5px;
+      }
+      /* Responsive */
+      @media (max-width: 600px) {
+        .row {
+          flex-direction: column;
+          text-align: center;
+        }
+        #dpic {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+        .timespan {
+          width: 100%;
+          text-align: left;
+          padding-right: 0;
+          margin-bottom: 5px;
+        }
+        .entry {
+          flex-direction: column;
+        }
+        .ico {
+          width: 100%;
+          text-align: left;
+          margin-bottom: 5px;
+        }
+        .desc {
+          padding-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <div id="dhead" class="container">
+      <div class="row">
+        <div id="dpic">
+          <img src="[your-photo.jpg]" class="ppic" alt="[Your Name]" />
+        </div>
+        <div id="ddesc">
+          <h1>[Your Name]</h1>
+          <h2>[Your tagline]</h2>
+          <div id="dico">
+            <a href="[your-github-url]"><img src="assets/cgithub.svg" class="iico" alt="GitHub" /></a>
+            <a href="[your-twitter-url]"><img src="assets/ctwitter.svg" class="iico" alt="Twitter" /></a>
+            <a href="[your-blog-url]"><img src="assets/crss.svg" class="iico" alt="Blog" /></a>
+            <img src="assets/cemail.svg" style="cursor: pointer;" class="iico" id="iemail" title="click to reveal" />
+          </div>
+          <div id="demail"></div> <!-- will reveal email -->
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Bio (hidden by default) -->
+    <div id="bio" class="container" style="display:none;">
+      [Your short bio – optional]
+    </div>
+
+    <!-- History / Experience -->
+    <div id="history" class="container">
+
+      <div class="entry row">
+        <div class="timespan">
+          [Year] - [Year]
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="[company-logo.png]" alt="[Company]" />
+        </div>
+        <div class="desc">
+          [Job title] at <a href="[company-url]">[Company]</a>. [Short description of your work.]
+        </div>
+      </div>
+
+      <div class="entry row">
+        <div class="timespan">
+          [Year] - [Year]
+        </div>
+        <div class="ico">
+          <div class="entry-dot"></div>
+          <img src="[university-logo.png]" alt="[University]" />
+        </div>
+        <div class="desc">
+          [Degree] at <a href="[university-url]">[University]</a>. [Thesis / focus area.]
+        </div>
+      </div>
+
+      <!-- Add more entries as needed -->
+
+    </div>
+
+    <!-- Bio (visible) -->
+    <div id="bio" class="container">
+      <div class="ctitle">bio</div>
+      <div>[Write a longer bio here. Describe your background, interests, and current work.]</div><br><br>
+    </div>
+
+    <!-- Featured Talks -->
+    <div style="background-color: #eee; padding-top: 1px; margin-top: 10px;">
+      <div id="featured-talks" class="container">
+        <div class="ctitle">featured talks</div>
+        <div class="row">
+          <div class="card">
+            <a href="[talk-link]">
+              <div class="ccimg"><img src="[talk-thumbnail.jpg]" /></div>
+            </a>
+            <div class="cdesc">[Talk title]</div>
+          </div>
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Teaching -->
+    <div class="container">
+      <div class="ctitle">teaching</div>
+      <div>[Describe any courses, tutorials, or educational content you have created.]</div>
+      <img src="[teaching-image.jpg]" style="max-width:100%; border-radius:10px; margin-bottom: 20px;"/>
+      <ul class="tul">
+        <li class="til tilb"><a href="[course-link]">[Course name]</a></li>
+        <li class="til"><a href="[notes-link]">[Course notes]</a></li>
+      </ul>
+    </div>
+
+    <!-- Featured Writing -->
+    <div style="background-color: #eee; padding-top: 1px; margin-top: 50px; padding-bottom: 30px;">
+      <div class="container">
+        <div class="ctitle">featured writing</div>
+        <ul class="nodot">
+          <li>[Month Year] <a href="[post-link]">[Post title]</a></li>
+          <li>[Month Year] <a href="[post-link]">[Post title]</a></li>
+          <!-- Add more posts -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pet Projects -->
+    <div id="pet-projects" class="container">
+      <div class="ctitle">pet projects</div>
+
+      <div class="project">
+        <div class="pico"><img src="[project-image.jpg]" /></div>
+        <div class="pdesc"><a href="[project-link]">[Project name]</a> – [Short description.]</div>
+        <div class="pend"></div>
+      </div>
+
+      <!-- Add more projects -->
+
+    </div>
+
+    <!-- Publications -->
+    <div class="container">
+      <div class="ctitle">publications</div>
+
+      <div class="pub">
+        <div class="pub-title"><a href="[paper-link]">[Paper title]</a></div>
+        <div class="pub-venue">[Conference / Journal Year]</div>
+        <div class="pub-authors">[Authors]</div>
+      </div>
+
+      <!-- Add more publications -->
+
+      <div>
+        <br>
+        Also on <a href="[google-scholar-url]">Google Scholar</a>
+      </div>
+    </div>
+
+    <!-- Misc Unsorted -->
+    <div class="container">
+      <div class="ctitle">misc unsorted</div>
+      <ul style="padding-left: 10px;">
+        <li><a href="[link]">[Item description]</a></li>
+        <li><a href="[link]">[Item description]</a></li>
+        <!-- Add more items -->
+      </ul>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Email reveal script (rot13) -->
+    <script type="text/javascript">
+      const rot13 = (message) => {
+        const alpha = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM';
+        return message.replace(/[a-z]/gi, letter => alpha[alpha.indexOf(letter) + 13]);
+      }
+      var e_is_shown = false;
+      document.getElementById('iemail').addEventListener("click", function(){
+        let demail = document.getElementById('demail');
+        let msg = "[your-email-rot13]" + "@" + "[your-domain-rot13]" + "<br>[optional message]";
+        demail.innerHTML = rot13(msg);
+        demail.style.opacity = e_is_shown ? 0 : 1;
+        e_is_shown = !e_is_shown;
+      })
+    </script>
+  </body>
+</html>
